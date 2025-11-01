@@ -38,3 +38,32 @@ C:\Program Files\Java\jdk-21
 2. venv\Scripts\activate
 3. pip install -r requirements.txt
 4. run file  `check.ipynb` untuk mengecek apakah sudah terinstall dengan benar
+
+
+### Struktur Folder
+```bash
+C:\python-project\midterm-project\
+│
+├── data\                    
+│   ├── raw\                 
+│   └── processed\         
+│
+├── notebooks\  
+│   ├── 01_setup_environment.ipynb
+│   ├── 02_data_preprocessing.ipynb
+│   ├── 03_model_training.ipynb
+│   └── 04_evaluation.ipynb
+│
+├── src\                     # Script Python modular
+│   ├── preprocessing.py
+│   ├── training.py
+│   └── evaluation.py
+│
+│
+├── venv\                   
+│
+├── README.md                
+├── requirements.txt 
+└── .gitignore               
+
+```
