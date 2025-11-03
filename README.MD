@@ -18,6 +18,16 @@ java -version
 java version "21.x.x" ...
 ```
 
+## (Tambahan) Setup Binaries Hadoop
+
+Ini diperlukan, karena beberapa library PySpark bekerja dengan binaries hadoop (contohnya untuk write file).
+
+1. Unduh semua file bin **Hadoop 3.3.6** di [github.com/cdarlint/winutils](https://github.com/cdarlint/winutils/tree/master/hadoop-3.3.6/bin)
+
+2. Siapkan direktori `C:\hadoop\bin` untuk menampung semua file bin tersebut
+
+3. Kemudian masukkan semua file bin Hadoop tersebut ke direktori
+
 ## Setup Environment Variables
 1. Buka menu Edit the system environment variables
 → klik Environment Variables…
@@ -30,7 +40,33 @@ lakukan verifikasi dengan command
 ```bash
 echo %JAVA_HOME%
 output yang diharapkan:
-C:\Program Files\Java\jdk-21
+   C:\Program Files\Java\jdk-21
+```
+> Tambahan: *Setup binary Hadoop tanpa instalasi Hadoop 👇*
+
+1. Masih di menu Edit the system environment variables
+→ klik Environment Variables…
+2. Tambahkan variabel baru di System Variables:
+```bash
+Variable name: HADOOP_HOME
+Variable value: C:\hadoop
+```
+Kemudian, klik dua kali pada variabel bernama `Path`, klik tombol `New` dan tambahkan path baru berikut:
+```bash
+C:\hadoop\bin
+```
+lakukan verifikasi dengan command
+```bash
+echo %HADOOP_HOME%
+output yang diharapkan:
+   C:\hadoop
+```
+lakukan juga verifikasi winutils.exe (binary hadoop) dengan command
+```bash
+winutils.exe
+output yang diharapkan:
+   Usage: winutils.exe [command] ...
+   Provide basic command line utilities for Hadoop on Windows.
 ```
 
 ## Setup Project
